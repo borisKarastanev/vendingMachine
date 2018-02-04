@@ -1,0 +1,28 @@
+{
+  "name": "vendingmachine",
+  "version": "0.0.1",
+  "description": "A representation of a coffee vending machine written in JavaScript/TypeScript Edit",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borisKarastanev/vendingMachine.git"
+  },
+  "keywords": [
+    "node.js",
+    "typescript"
+  ],
+  "author": "Boris Karastanev <b.karastanev@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/borisKarastanev/vendingMachine/issues"
+  },
+  "homepage": "https://github.com/borisKarastanev/vendingMachine#readme",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  }
+}

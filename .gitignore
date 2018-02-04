@@ -57,3 +57,14 @@ typings/
 # dotenv environment variables file
 .env
 
+# ignore ide dir
+.idea
+.tscache
+.vscode
+
+
+#ignore all transpiled ts files
+*.js
+*.map.js
+*.js.map
+
