@@ -1,0 +1,19 @@
+{
+    "coffeeList": [
+        {
+            "name": "Espresso",
+            "description": "Wonderefull for coding",
+            "price": 1.50
+        },
+        {
+            "name": "Latte",
+            "description": "Wonderefull for coding with milk",
+            "price": 1.80
+        },
+        {
+            "name": "Cappuccino",
+            "description": "Perfect for the weekend",
+            "price": 2.00
+        }
+    ]
+}
