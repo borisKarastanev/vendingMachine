@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "username": "guest",
+            "password": "123",
+            "balance": 150,
+            "admin": false
+        },
+        {
+            "username": "admin",
+            "password": "321",
+            "balance": 1500,
+            "admin": true
+        }
+    ]
+}
