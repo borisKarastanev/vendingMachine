@@ -1,16 +1,18 @@
 {
     "users": [
         {
-            "username": "guest",
-            "password": "123",
-            "balance": 150,
-            "admin": false
-        },
-        {
+            "_id": 0,
             "username": "admin",
             "password": "321",
             "balance": 1500,
             "admin": true
+        },
+        {
+            "_id": 1,
+            "username": "guest",
+            "password": "123",
+            "balance": 0.6,
+            "admin": false
         }
     ]
 }
