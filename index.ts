@@ -4,7 +4,11 @@ const coffeeService = new CoffeeService();
 
 coffeeService.getCoffeeList()
 .then((list) => {
-    console.log(list.coffeeList);
+    const orderId = list.coffeeList[1]._id;
+    return coffeeService.selectCoffee(list.coffeeList, orderId)
+})
+.then((order) => {
+    console.log(order);
 })
 .catch((err) => {
     console.error(err);
