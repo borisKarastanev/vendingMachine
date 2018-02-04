@@ -1,4 +1,5 @@
-import * as fs from "fs";
+
+import util from "../shared/util";
 
 export class CoffeeService implements ICoffeeService {
 
@@ -7,22 +8,19 @@ export class CoffeeService implements ICoffeeService {
     }
 
     getCoffeeList(): Promise<any> {
-        const coffeeListPath = `${__dirname}/../../assets/coffeeList.json`;
-        return new Promise((resolve, reject) => {
-            fs.readFile(coffeeListPath, "utf8", (coffeeListError, list) => {
-                if (coffeeListError) {
-                    reject(coffeeListError);
-                }
-
+        return util.readCoffeeList()
+            .then((list) => {
                 try {
                     list = JSON.parse(list);
-                } catch(jsonError) {
-                    reject(jsonError);
+                } catch (jsonError) {
+                    return Promise.reject(jsonError);
                 }
 
-                resolve(list);
+                return list;
+            })
+            .catch((readListError) => {
+                return Promise.reject(readListError);
             });
-        });
     }
 
     selectCoffee(list: Array<any>, coffeeId: number): Promise<Array<any>> {
