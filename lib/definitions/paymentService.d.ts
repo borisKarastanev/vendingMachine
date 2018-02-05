@@ -1,5 +1,5 @@
 interface IPaymentService {
-    paymentMethodsList(): Array<string>;
-    acceptPayment(userId: number, item: Array<any>): Promise<any>;
+    paymentMethodsList(): Array<any>;
+    acceptPayment(payment: any, item: Array<any>): Promise<any>;
     returnChange(amount: number): Promise<number>
 }

@@ -60,7 +60,7 @@ export class UserService implements IUserService {
 
     updateBalance(user: any, itemPrice: number): Promise<string> {
         return new Promise((resolve, reject) => {
-            reject("not implemented yet!");
+            reject(new Error("not implemented yet!"));
         });
     }
 }
