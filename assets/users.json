@@ -4,14 +4,20 @@
             "_id": 0,
             "username": "admin",
             "password": "321",
-            "balance": 1500,
+            "balance": {
+                "cash": 1500,
+                "card": 1200
+            },
             "admin": true
         },
         {
             "_id": 1,
             "username": "guest",
             "password": "123",
-            "balance": 10,
+            "balance": {
+                "cash": 10,
+                "card": 120
+            },
             "admin": false
         }
     ]

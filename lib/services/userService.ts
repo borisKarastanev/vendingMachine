@@ -45,9 +45,9 @@ export class UserService implements IUserService {
         });
     }
 
-    hasBalance(user: any, itemPrice: number): Promise<string> {
+    hasBalance(user: any, itemPrice: number, transaction: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            if (user.balance >= itemPrice) {
+            if (user.balance[transaction] >= itemPrice) {
                 resolve("payment accepted!");
             } else {
                 reject(new Error("Insufficient funds"));

@@ -16,7 +16,7 @@ export class PaymentService implements IPaymentService {
             .then((usersList) => {
                 const mockUser = usersList.users[1];
 
-                return this.userService.hasBalance(mockUser, item[0].price);
+                return this.userService.hasBalance(mockUser, item[0].price, "cash");
             })
             .then((result) => {
                 return result;
