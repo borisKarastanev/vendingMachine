@@ -1,5 +1,5 @@
-import * as path from "path";
 import * as fs from "fs";
+import * as path from "path";
 
 export default class Util {
     static path = path;
@@ -29,7 +29,8 @@ export default class Util {
 
                 try {
                     users = JSON.parse(users);
-                } catch(jsonParseError) {
+
+                } catch (jsonParseError) {
                     reject(jsonParseError);
                 }
 

@@ -2,12 +2,8 @@ import util from "../shared/util";
 
 export class UserService implements IUserService {
 
-    constructor() {
-
-    }
-
     login(username: string, password: string) {
-        //const stdIn = process.openStdin();
+        // const stdIn = process.openStdin();
 
         // return new Promise ((resolve, reject) => {
         //     stdIn.on("data", (data) => {
@@ -25,7 +21,8 @@ export class UserService implements IUserService {
             if (validUser.length === 0) {
                 return Promise.reject(new Error("Not a valid user! Please try again!"));
             }
-            delete validUser[0].password; //BAD!!! this should be done on a database level in a real world app!!!
+            delete validUser[0].password; // BAD!!! this should be done on a database level in a real world app!!!
+
             return validUser;
         });
     }

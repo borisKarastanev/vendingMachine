@@ -7,6 +7,7 @@ export class PaymentService implements IPaymentService {
 
     paymentMethodsList(): Array<string> {
         const methodsList: Array<string> = ["cash", "credit card", "bitcoin"];
+
         return methodsList;
     }
 
@@ -14,13 +15,14 @@ export class PaymentService implements IPaymentService {
         return util.readUsersList()
             .then((usersList) => {
                 const mockUser = usersList.users[1];
+
                 return this.userService.hasBalance(mockUser, item[0].price);
             })
             .then((result) => {
                 return result;
             })
             .catch((paymentError) => {
-                return Promise.reject(paymentError)
+                return Promise.reject(paymentError);
             });
     }
 

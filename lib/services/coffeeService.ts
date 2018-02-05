@@ -3,10 +3,6 @@ import util from "../shared/util";
 
 export class CoffeeService implements ICoffeeService {
 
-    constructor() {
-
-    }
-
     getCoffeeList(): Promise<any> {
         return util.readCoffeeList()
             .then((list) => {
