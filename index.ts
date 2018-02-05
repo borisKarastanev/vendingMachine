@@ -1,10 +1,16 @@
+import { UserService } from './lib/services/userService';
 import { PaymentService } from './lib/services/paymentService';
 import { CoffeeService } from './lib/services/coffeeService';
 
+const userService = new UserService();
 const coffeeService = new CoffeeService();
-const paymentService = new PaymentService();
+const paymentService = new PaymentService(userService);
 
-coffeeService.getCoffeeList()
+userService.login("guest", "123")
+.then((user) => {
+    console.log(user);
+    return coffeeService.getCoffeeList();
+})
 .then((list) => {
     const orderId = list.coffeeList[1]._id;
     return coffeeService.selectCoffee(list.coffeeList, orderId)

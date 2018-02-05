@@ -1,8 +1,8 @@
 import util from "../shared/util";
 
 export class PaymentService implements IPaymentService {
-    constructor() {
-
+    constructor(private userService: IUserService) {
+        this.userService = userService;
     }
 
     paymentMethodsList(): Array<string> {
@@ -15,17 +15,11 @@ export class PaymentService implements IPaymentService {
         return util.readUsersList()
             .then((usersList) => {
                 // TODO Migrate to user Service 
-                return new Promise((resolve, reject) => {
-                    usersList.users.forEach((user: any) => {
-                        if (user._id === uid) {
-                            if (user.balance >= item[0].price) {
-                                resolve ("payment accepted!");
-                            } else {
-                                reject(new Error("Insufficient funds"));
-                            }
-                        }
-                    });
-                })  
+                const mockUser = usersList.users[1];
+                return this.userService.hasBalance(mockUser, item[0].price);
+            })
+            .then((result) => {
+                return result;
             })
             .catch((paymentError) => {
                 return Promise.reject(paymentError)
