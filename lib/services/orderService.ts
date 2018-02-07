@@ -34,7 +34,7 @@ export class OrderService implements IOrderService {
             return this.userService.updateBalance(loggedUser, 5);
         })
         .catch((buyCoffeeError) => {
-            console.error(buyCoffeeError);
+            return Promise.reject(buyCoffeeError);
         });
     }
 }

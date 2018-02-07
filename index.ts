@@ -28,6 +28,12 @@ const orderService = new OrderService(userService, coffeeService, paymentService
 // })
 
 userService.login("guest", "123")
-.then((user) => orderService.buyCoffee(user)
-.then((result: string) => console.log(result))
-.catch((buyCofeeError: any) => console.error(buyCofeeError)));
+.then((user) => {
+    return orderService.buyCoffee(user);
+})
+.then((result) => {
+    console.log(result);
+})
+.catch((operationError) => {
+    console.error(operationError);
+});
