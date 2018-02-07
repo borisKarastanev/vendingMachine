@@ -4,6 +4,7 @@
   "description": "A representation of a coffee vending machine written in JavaScript/TypeScript Edit",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "tsc": "tsc",
     "lint": "tslint \"lib/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
