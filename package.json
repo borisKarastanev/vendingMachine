@@ -1,6 +1,6 @@
 {
   "name": "vendingmachine",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A representation of a coffee vending machine written in JavaScript/TypeScript Edit",
   "main": "index.js",
   "scripts": {
